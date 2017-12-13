@@ -35,8 +35,7 @@ attr_accessor :name, :songs, :all
         name == artist.name
       end
     else
-      temp = Artist.new(name)
-      @@all << temp
+      self.new(name).tap {|artist| artist.save}
     end
   end
   def print_songs
