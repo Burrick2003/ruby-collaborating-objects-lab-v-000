@@ -8,16 +8,16 @@ attr_accessor :name, :artist
   def self.all
     @@all
   end
-    def self.new_by_filename(filename) #filename is artist,name,genre whereas init is name,artist,genre
-        array = filename.split(" - ")
-        newsong = Song.new(array[1])
-        newsong.artist = Artist.find_or_create_by_name(array[0])
-
-        @@all << newsong
-        binding.pry
-      end
-
-
+  def self.new_by_filename(filename)
+  artist, song = filename.split(" - ")
+  new_song = self.new(song)
+  new_song.artist_name = artist
+  new_song.save
+end
+def save
+    @@all << self
+    self
+  end
 
 
 end
