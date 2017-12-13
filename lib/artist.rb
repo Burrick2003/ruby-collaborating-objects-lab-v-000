@@ -22,7 +22,7 @@ attr_accessor :name, :songs, :all
       end
     else
       temp = Artist.new(name)
-      temp.save
+      @@all << temp
       temp
     end
   end
