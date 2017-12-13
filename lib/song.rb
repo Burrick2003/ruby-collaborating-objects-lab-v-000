@@ -14,6 +14,7 @@ attr_accessor :name, :artist
         newsong.artist = Artist.find_or_create_by_name(array[0])
 
         @@all << newsong
+        binding.pry
       end
 
 
