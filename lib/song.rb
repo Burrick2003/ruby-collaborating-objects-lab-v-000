@@ -3,7 +3,8 @@ class Song
 attr_accessor :name, :artist
   def initialize(name)
     @name=(name)
-
+  def self.all
+    @@all
   end
 
     def self.new_by_filename(filename) #filename is artist,name,genre whereas init is name,artist,genre
