@@ -36,7 +36,7 @@ attr_accessor :name, :songs, :all
       end
     else
       temp = Artist.new(name)
-      #@@all << temp
+      @@all << temp
     end
   end
   def print_songs
