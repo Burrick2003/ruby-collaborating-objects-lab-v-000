@@ -13,7 +13,7 @@ attr_accessor :name, :artist
       newsong = self.new(array[1])
       newsong.artist = Artist.find_or_create_by_name(array[0])
 
-      @@all << newsong
+      @@all << self
       #binding.pry
     end
 
