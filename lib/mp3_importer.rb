@@ -8,7 +8,7 @@ attr_accessor :path, :files
     @files = Dir["#{@path}/*.mp3"].select{ |f| File.file? f }.map{ |f| File.basename f }
   end
   def import
-    @files.each do |file|
+    files.each do |file|
       Song.new_by_filename(file)
       binding.pry
     end
