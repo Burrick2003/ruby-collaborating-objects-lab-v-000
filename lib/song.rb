@@ -11,14 +11,9 @@ attr_accessor :name, :artist
   def self.new_by_filename(filename) #filename is artist,name,genre whereas init is name,artist,genre
       array = filename.split(" - ")
       newsong = self.new(array[1])
-      newsong.artist_name = array[0]
-
+newsong.artist = Artist.find_or_create_by_name(array[0])
       @@all << newsong
       #binding.pry
     end
-    def artist_name=(name)
-        self.artist = Artist.find_or_create_by_name(name)
-      end
-
 
 end
