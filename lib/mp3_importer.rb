@@ -10,7 +10,7 @@ attr_accessor :path, :files
   def import
     files.each do |file|
       Song.new_by_filename(file)
-      binding.pry
+      #binding.pry
     end
   end
 
