@@ -30,6 +30,8 @@ attr_accessor :name, :songs, :all
     end
   end
 
-
+  def save
+    self.all << self
+  end
 
 end
